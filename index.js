@@ -1,6 +1,7 @@
 const core = require('@actions/core');
 const execSync = require('child_process').execSync;
 const fs = require('fs');
+const projectPath = path.join(process.cwd(), core.getInput('path'))
 
 async function run() {
   try {
@@ -20,6 +21,8 @@ async function run() {
     core.startGroup('Set Google Clound project');
     execSync(`gcloud config set project ${projectName}`, {stdio: 'inherit'});
     core.endGroup();
+
+    execSync(`cd ${projectPath}`, {stdio: 'inherit'});
 
     if (isDebug) {
 
