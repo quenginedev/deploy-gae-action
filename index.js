@@ -23,8 +23,6 @@ async function run() {
     execSync(`gcloud config set project ${projectName}`, {stdio: 'inherit'});
     core.endGroup();
 
-    execSync(`cd ${projectPath}`, {stdio: 'inherit'});
-
     if (isDebug) {
 
       core.startGroup('Project info');
@@ -33,7 +31,7 @@ async function run() {
     } else {
 
       core.startGroup('Depoy project');
-      execSync(`gcloud app deploy`, {stdio: 'inherit'});
+      execSync(`cd ${projectPath} && gcloud app deploy`, {stdio: 'inherit'});
       core.endGroup();
     }
 
