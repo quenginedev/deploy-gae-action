@@ -10,6 +10,9 @@ inputs:
   debug:
     description: 'Debug action'
     dafault: false
+  path:
+    description: 'app.yaml path'
+    default: ./
 runs:
   using: 'node12'
   main: 'index.js'
