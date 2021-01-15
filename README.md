@@ -15,6 +15,10 @@
 
 **Required** The project-id in service account.
 
+### `path`
+
+Directory in which app.yaml is located. Default `./`.
+
 ### `debug`
 
 To test. Default `false`. PS: If true does not deploy
