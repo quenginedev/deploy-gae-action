@@ -19,6 +19,10 @@
 
 Directory in which app.yaml is located. Default `./`.
 
+### `yaml`
+
+Name of app.yaml file incase it's somthing else. Default `./`.
+
 ### `debug`
 
 To test. Default `false`. PS: If true does not deploy

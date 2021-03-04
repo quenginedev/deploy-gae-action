@@ -10,6 +10,7 @@ async function run() {
     const serviceAccountFile = `/tmp/${(new Date()).getTime()}.json`; // Create temp json
     const projectName = core.getInput('project-id');
     const isDebug = core.getInput('debug');
+    const appYaml = core.getInput('yaml')
 
     core.startGroup('Processing service account');
     console.log('Copy service account');
@@ -31,7 +32,7 @@ async function run() {
     } else {
 
       core.startGroup('Depoy project');
-      execSync(`cd ${projectPath} && gcloud app deploy`, {stdio: 'inherit'});
+      execSync(`cd ${projectPath} && gcloud app deploy ${appYaml}`, {stdio: 'inherit'});
       core.endGroup();
     }
 
