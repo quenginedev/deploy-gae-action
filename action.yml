@@ -13,6 +13,9 @@ inputs:
   path:
     description: 'app.yaml path'
     default: ./
+  yaml:
+    description: 'app.yaml name. Default app.yaml'
+    default: app.yaml
 runs:
   using: 'node12'
   main: 'index.js'
