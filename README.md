@@ -31,7 +31,7 @@ To test. Default `false`. PS: If true does not deploy
 
 ```yaml
 - name: Deploy to Google App Engine
-  uses: claudiuri/deploy-gae-action@master
+  uses: quenginedev/deploy-gae-action
   with:
     service-account:  ${{ secrets.SERVICE_ACCOUNT }}
     project-id: ${{ secrets.PROJECT_ID }}
